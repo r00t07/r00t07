@@ -1,0 +1,8 @@
+script_memoszimmer_hell:
+  value_template: "{{ is_state('light.yeelight_ceiling_04cf8c77f5c7', 'on') and states.light.yeelight_ceiling_04cf8c77f5c7.attributes.brightness|int == 254 }}"
+script_memoszimmer_licht_normal:
+  value_template: "{{ is_state('light.yeelight_ceiling_04cf8c77f5c7', 'on') and states.light.light.yeelight_ceiling_04cf8c77f5c7.brightness|int == 127 }}"
+script_memoszimmer_licht_gemuetlich:
+  value_template: "{{ is_state('light.yeelight_ceiling_04cf8c77f5c7', 'on') and states.light.yeelight_ceiling_04cf8c77f5c7.attributes.brightness|int == 76 }}"
+script_memoszimmer_licht_aus:
+  value_template: "{{ is_state('light.yeelight_ceiling_04cf8c77f5c7', 'off') }}"

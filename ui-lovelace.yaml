@@ -1,0 +1,37 @@
+﻿title: Haus
+resources:
+  - url: /local/custom-lovelace/weather-card/weather-card.js
+    type: module
+  - url: /local/tiles-card/tiles-card.js?v=0.1
+    type: js
+views:
+    # View tab title.
+  - title: Example
+    cards:
+      - type: custom:tiles-card
+        card_settings:
+          background: var(--paper-card-background-color)
+          columns: 4
+          gap: 24px
+          title: Memos Zimmer
+        entities:
+          - entity: script.memoszimmer_hell
+            icon: 'mdi:brightness-7'
+            label_sec: Hell
+            templates:
+              icon_color: if (entities["binary_sensor.script_memoszimmer_licht_hell"].state == "on") return "var(--accent-color)"; else return "var(--text-color)";
+          - entity: script.memoszimmer_normal
+            icon: 'mdi:brightness-6'
+            label_sec: Normal
+            templates:
+              icon_color: if (entities["binary_sensor.script_memoszimmer_licht_normal"].state == "on") return "var(--accent-color)"; else return "var(--text-color)";
+          - entity: script.memoszimmer_gemuetlich
+            icon: 'mdi:brightness-4'
+            label_sec: Gemütlich
+            templates:
+              icon_color: if (entities["binary_sensor.script_memoszimmer_licht_gemuetlich"].state == "on") return "var(--accent-color)"; else return "var(--text-color)";
+          - entity: script.memoszimmer_licht_aus
+            icon: 'mdi:power-standby'
+            label_sec: Aus
+            templates:
+              icon_color: if (entities["binary_sensor.script_memoszimmer_licht_aus"].state == "on") return "var(--accent-color)"; else return "var(--text-color)";

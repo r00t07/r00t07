@@ -1,0 +1,30 @@
+memoszimmer_hell:
+  alias: Memos Zimmer Hell
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.yeelight_ceiling_04cf8c77f5c7
+        brightness_pct: "100"
+        kelvin: 6700
+memoszimmer_normal:
+  alias: Memos Zimmer Normal
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.yeelight_ceiling_04cf8c77f5c7
+        brightness_pct: "100"
+        kelvin: 2700
+memoszimmer_gemuetlich:
+  alias: Memos Zimmer Gemuetlich
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.yeelight_ceiling_04cf8c77f5c7
+        brightness_pct: "30"
+        kelvin: 2700
+memoszimmer_licht_aus:
+  alias: Memos Zimmer aus
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: light.yeelight_ceiling_04cf8c77f5c7
